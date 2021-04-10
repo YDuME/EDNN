@@ -1,0 +1,35 @@
+# Yifan Du             dyifan1@jhu.edu
+# Tamer A. Zaki        t.zaki@jhu.edu
+# Johns Hokpins University
+# US patent submitted 03/08/2021
+
+
+This main folder containts several realization of EDNN for different 
+time dependent partial differential equations. In each folder there 
+are four files: 
+
+main.py : The main function for this problem. It contains the problem 
+          definition and parameters, the high level initialization, 
+          training and marching commands for the EDNN. 
+ednn.py : The EDNN abstract class. It contains the detailed implementation
+          of EDNN structure, training and marching. Because the 
+          boundary conditions and constraints for different PDEs are 
+          different, the ednn files are slightly different for these
+          cases. 
+rhs.py  : The evolutional PDE implementation. It containts The right
+          -hand-side of different PDEs. These nonlinear differential 
+          operators are implemented using tensorflow. 
+marching_schemes : The time marching methods for the neural network 
+                   parameters. The forward Euler and Runge-Kutta are 
+                   implemented. 
+
+To run one of these cases, first enter the corresponding directory. 
+
+To train the network for initial condition, type: 
+           
+         python main.py 0
+
+To march the trained network, type: 
+
+         python main.py 1
+
